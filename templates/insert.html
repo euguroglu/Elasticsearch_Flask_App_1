@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form  method="POST">
+        <label for="d">search here : </label>
+        <input type="text" name="d" id="d" value="{{d}}" >
+        <input type="submit" value="insert">
+    {% if d %}
+      <p>{{d}} inserted to elasticsearch</p>
+    {% endif%}
+  </body>
+</html>

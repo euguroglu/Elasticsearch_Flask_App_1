@@ -18,6 +18,18 @@ def index():
 
     return render_template('index.html')
 
+@app.route('/insert', methods=["GET","POST"])
+def insert():
+
+    d = request.form.get("d")
+    if d is not None:
+
+        es.index(index='cities', body=d)
+
+        return render_template('insert.html',d=d)
+
+    return render_template('insert.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)
